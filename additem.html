@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<script type="text/javascript" src="js/jquery-1.11.1.js"></script>	
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#button').click(function(){
+					var toAdd = $('input[name=checkListItem]').val();
+					$('.list').append('<div class="item">' +toAdd+ '</div>');
+					});//('#button').click
+					$(document).on('click' , '.list', function(){
+						$(this).remove();
+					});//(document).on
+			});//(document).ready
+		
+		</script>
+	
+		<style>
+		
+			#button{
+				display:inline-block;
+				height:20px;
+				width:70px;
+				background-color: #cc0000;
+				font-family:arial;
+				font-weight:bold;
+				color:#ffffff;
+				border-radius:5px;
+				text-align:center;
+				margin-top:2px;
+			}
+			.list{
+				font-family:garamond;
+				color:#cc0000;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<h2>To Do</h2>
+		<form name="checkListForm">
+			<input type="text" name="checkListItem"/>
+		</form>
+		<div id="button">Add!</div>
+		
+		<div class="list"></div>
+		
+	</body>
+
+</html>

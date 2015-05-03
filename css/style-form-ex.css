@@ -1,0 +1,14 @@
+.form {
+	width: 500px; 
+	height: 100%; 
+	border: 3px solid #CCCCCC; 
+	background-color: #FFFF00;
+	display: block; 
+	margin:-5px;
+	padding: 5px;
+	top: 0;
+}
+
+input{
+	margin: 3px;
+}
