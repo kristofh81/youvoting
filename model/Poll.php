@@ -32,6 +32,7 @@ class Poll
 		return $dataJson;
 	}
 
+
 	// converts json into php array
 	public function makePhp($data)
 	{
@@ -39,11 +40,11 @@ class Poll
 		return $arrayPhp;
 	}
 
+
 	// stores json string into data directory
 	public function storeData($formdata)
 	{
 
-	
 	$filejson = 'data/polldata.json';
 
     $arr_data = array();        // to store all form data
@@ -59,17 +60,16 @@ class Poll
     // appends the array with new form data
     $arr_data[] = $formdata;
 
-    
-
     // encodes the array into a string in JSON format
     $jsondata = json_encode($arr_data, JSON_PRETTY_PRINT);
-
 
     // outputs error message if data cannot be saved
     if(file_put_contents('data/polldata.json', $jsondata)) echo 'Data successfully saved';
     else echo 'Unable to save data in "data directory"';
-  }
+  	}
 
+
+  	// method to pull all content out of json db
   	public function getContent()
   	{
   		$filejson = 'data/polldata.json';

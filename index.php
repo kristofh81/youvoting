@@ -3,7 +3,9 @@
 	session_start();
 	require_once 'process.php';
 
-	
+	if (isset($_GET['success'])) { 
+	 	$formid = sanitize($_GET['formid']);
+	 }
 
 ?>
 
@@ -34,7 +36,7 @@
 
     	//$.getJSON("data/polldata.json" , function(data) {		
 																// !!here formid has to be the code !! 
-			var output = '&lt;iframe src=&quot;form-example.php?formid=1&quot;width=&quot;600&quot; height=&quot;450&quot; frameborder=&quot;0&quot; style=&quot;border:0&quot;&gt;&lt;/iframe&gt;';
+			var output = '&lt;iframe src=&quot;form-example.php?formid=<?=$formid?>&quot;width=&quot;600&quot; height=&quot;450&quot; frameborder=&quot;0&quot; style=&quot;border:0&quot;&gt;&lt;/iframe&gt;';
 
 			//testing ajax to get json data
 			//for (var key in data) {
